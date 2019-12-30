@@ -21,7 +21,7 @@ library(ggplot2)
 
 ```{r}
 library(readxl)
-CustomerComplaints <- read.csv("C:/Users/smazeski/Desktop/CustomerComplaints.csv")
+CustomerComplaints <- read.csv("C:/Users/smazeski/Desktop/WinterData/CustomerComplaints.csv")
 head(CustomerComplaints)
 ```
 
@@ -44,8 +44,13 @@ view(unduplicated)
 write.table(unduplicated, "C:/Users/smazeski/Desktop/mydata.xlsx", sep = ",")
 ```
 
+
+
+
+
+
 ```{r}
-ComplaintByItem <- CustomerComplaints %>% group_by(ITEM_NUMBER) %>% summarise(Credit = sum(CREDIT)) %>% arrange(Credit)
+CreditByItem <- CustomerComplaints %>% group_by(ITEM_NUMBER) %>% summarise(Credit = sum(CREDIT)) %>% arrange(Credit)
 head(ComplaintByItem)
 
 ```
