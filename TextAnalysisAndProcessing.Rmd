@@ -14,8 +14,6 @@ library(monkeylearn)
 library(knitr)
 library(glue)
 library(ggplot2)
-library(tidytext)
-library(kableExtra)
 
 ```
 
@@ -37,10 +35,13 @@ CustomerComplaintCost
 ```
 
 ```{r}
-HighPercentComplaint <- CustomerComplaints %>% group_by(ITEM_NUMBER) %>% filter(TOTAL_ORDERED > 8) %>% select(ITEM_NUMBER, TOTAL_ORDERED, TOTAL_COMPLAINTS, THEPERCENTAGE)  %>% arrange(desc(THEPERCENTAGE))
-unduplicated <- unique(HighPercentComplaint)
-head(unduplicated, 10)
+HighPercentComplaint <- CustomerComplaints %>% group_by(ITEM_NUMBER) %>% filter(THEPERCENTAGE > 5) %>% select(ITEM_NUMBER, TOTAL_ORDERED, TOTAL_COMPLAINTS, THEPERCENTAGE, CREDIT) %>% arrange(desc(THEPERCENTAGE))
+Next <- HighPercentComplaint %>% replace(is.na(.), 0) %>% mutate(SumCredit = sum(CREDIT))
 
+Final <- Next %>% select(ITEM_NUMBER, TOTAL_ORDERED, TOTAL_COMPLAINTS, THEPERCENTAGE, SumCredit) %>% arrange(SumCredit)
+unduplicated <- unique(Final)
+view(unduplicated)
+write.table(unduplicated, "C:/Users/smazeski/Desktop/mydata.xlsx", sep = ",")
 ```
 
 ```{r}
