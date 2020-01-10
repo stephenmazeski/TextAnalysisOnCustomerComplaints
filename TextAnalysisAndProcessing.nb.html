@@ -1751,15 +1751,117 @@ summary {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDcmVhdGUgZW52aXJvbm1lbnRcbmxpYnJhcnkodGlkeXZlcnNlKVxubGlicmFyeShEYXRhQ29tcHV0aW5nKVxubGlicmFyeShtb3NhaWMpXG5saWJyYXJ5KG1vbmtleWxlYXJuKVxubGlicmFyeShrbml0cilcbmxpYnJhcnkoZ2x1ZSlcbmxpYnJhcnkoZ2dwbG90MilcblxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDcmVhdGUgZW52aXJvbm1lbnRcbmxpYnJhcnkodGlkeXZlcnNlKVxuYGBgIn0= -->
 <pre class="r"><code># Create environment
-library(tidyverse)
-library(DataComputing)
-library(mosaic)
-library(monkeylearn)
+library(tidyverse)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2Qgb3ZlcndyaXR0ZW4gYnkgJ2RwbHlyJzpcbiAgbWV0aG9kICAgICAgICAgICBmcm9tXG4gIHByaW50LnJvd3dpc2VfZGYgICAgIFxuUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxuXHUwMDFiWzMwbS0tIFx1MDAxYlsxbUF0dGFjaGluZyBwYWNrYWdlc1x1MDAxYlsyMm0gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIHRpZHl2ZXJzZSAxLjMuMCAtLVx1MDAxYlszOW1cblx1MDAxYlszMG1cdTAwMWJbMzJtPFUrMjcxMz5cdTAwMWJbMzBtIFx1MDAxYlszNG1nZ3Bsb3QyXHUwMDFiWzMwbSAzLjIuMSAgICAgXHUwMDFiWzMybTxVKzI3MTM+XHUwMDFiWzMwbSBcdTAwMWJbMzRtcHVycnIgIFx1MDAxYlszMG0gMC4zLjNcblx1MDAxYlszMm08VSsyNzEzPlx1MDAxYlszMG0gXHUwMDFiWzM0bXRpYmJsZSBcdTAwMWJbMzBtIDIuMS4zICAgICBcdTAwMWJbMzJtPFUrMjcxMz5cdTAwMWJbMzBtIFx1MDAxYlszNG1kcGx5ciAgXHUwMDFiWzMwbSAwLjguM1xuXHUwMDFiWzMybTxVKzI3MTM+XHUwMDFiWzMwbSBcdTAwMWJbMzRtdGlkeXIgIFx1MDAxYlszMG0gMS4wLjAgICAgIFx1MDAxYlszMm08VSsyNzEzPlx1MDAxYlszMG0gXHUwMDFiWzM0bXN0cmluZ3JcdTAwMWJbMzBtIDEuNC4wXG5cdTAwMWJbMzJtPFUrMjcxMz5cdTAwMWJbMzBtIFx1MDAxYlszNG1yZWFkciAgXHUwMDFiWzMwbSAxLjMuMSAgICAgXHUwMDFiWzMybTxVKzI3MTM+XHUwMDFiWzMwbSBcdTAwMWJbMzRtZm9yY2F0c1x1MDAxYlszMG0gMC40LjBcdTAwMWJbMzltXG5cdTAwMWJbMzBtLS0gXHUwMDFiWzFtQ29uZmxpY3RzXHUwMDFiWzIybSAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gdGlkeXZlcnNlX2NvbmZsaWN0cygpIC0tXG5cdTAwMWJbMzFteFx1MDAxYlszMG0gXHUwMDFiWzM0bWRwbHlyXHUwMDFiWzMwbTo6XHUwMDFiWzMybWZpbHRlcigpXHUwMDFiWzMwbSBtYXNrcyBcdTAwMWJbMzRtc3RhdHNcdTAwMWJbMzBtOjpmaWx0ZXIoKVxuXHUwMDFiWzMxbXhcdTAwMWJbMzBtIFx1MDAxYlszNG1kcGx5clx1MDAxYlszMG06Olx1MDAxYlszMm1sYWcoKVx1MDAxYlszMG0gICAgbWFza3MgXHUwMDFiWzM0bXN0YXRzXHUwMDFiWzMwbTo6bGFnKClcdTAwMWJbMzltXG4ifQ== -->
+<pre><code>Registered S3 method overwritten by &#39;dplyr&#39;:
+  method           from
+  print.rowwise_df     
+Registered S3 methods overwritten by &#39;dbplyr&#39;:
+  method         from
+  print.tbl_lazy     
+  print.tbl_sql      
+[30m-- [1mAttaching packages[22m --------------------------------------- tidyverse 1.3.0 --[39m
+[30m[32m&lt;U+2713&gt;[30m [34mggplot2[30m 3.2.1     [32m&lt;U+2713&gt;[30m [34mpurrr  [30m 0.3.3
+[32m&lt;U+2713&gt;[30m [34mtibble [30m 2.1.3     [32m&lt;U+2713&gt;[30m [34mdplyr  [30m 0.8.3
+[32m&lt;U+2713&gt;[30m [34mtidyr  [30m 1.0.0     [32m&lt;U+2713&gt;[30m [34mstringr[30m 1.4.0
+[32m&lt;U+2713&gt;[30m [34mreadr  [30m 1.3.1     [32m&lt;U+2713&gt;[30m [34mforcats[30m 0.4.0[39m
+[30m-- [1mConflicts[22m ------------------------------------------ tidyverse_conflicts() --
+[31mx[30m [34mdplyr[30m::[32mfilter()[30m masks [34mstats[30m::filter()
+[31mx[30m [34mdplyr[30m::[32mlag()[30m    masks [34mstats[30m::lag()[39m</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShEYXRhQ29tcHV0aW5nKVxuYGBgIn0= -->
+<pre class="r"><code>library(DataComputing)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdodG1sdG9vbHMnOlxuICBtZXRob2QgICAgICAgICAgICAgICBmcm9tICAgICAgICAgXG4gIHByaW50Lmh0bWwgICAgICAgICAgIHRvb2xzOnJzdHVkaW9cbiAgcHJpbnQuc2hpbnkudGFnICAgICAgdG9vbHM6cnN0dWRpb1xuICBwcmludC5zaGlueS50YWcubGlzdCB0b29sczpyc3R1ZGlvXG5SZWdpc3RlcmVkIFMzIG1ldGhvZCBvdmVyd3JpdHRlbiBieSAnaHRtbHdpZGdldHMnOlxuICBtZXRob2QgICAgICAgICAgIGZyb20gICAgICAgICBcbiAgcHJpbnQuaHRtbHdpZGdldCB0b29sczpyc3R1ZGlvXG5SZWdpc3RlcmVkIFMzIG1ldGhvZCBvdmVyd3JpdHRlbiBieSAnbW9zYWljJzpcbiAgbWV0aG9kICAgICAgICAgICAgICAgICAgICAgICAgICAgZnJvbSAgIFxuICBmb3J0aWZ5LlNwYXRpYWxQb2x5Z29uc0RhdGFGcmFtZSBnZ3Bsb3QyXG4ifQ== -->
+<pre><code>Registered S3 methods overwritten by &#39;htmltools&#39;:
+  method               from         
+  print.html           tools:rstudio
+  print.shiny.tag      tools:rstudio
+  print.shiny.tag.list tools:rstudio
+Registered S3 method overwritten by &#39;htmlwidgets&#39;:
+  method           from         
+  print.htmlwidget tools:rstudio
+Registered S3 method overwritten by &#39;mosaic&#39;:
+  method                           from   
+  fortify.SpatialPolygonsDataFrame ggplot2</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShtb3NhaWMpXG5gYGAifQ== -->
+<pre class="r"><code>library(mosaic)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBsYXR0aWNlXG5Mb2FkaW5nIHJlcXVpcmVkIHBhY2thZ2U6IGdnZm9ybXVsYVxuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBnZ3N0YW5jZVxuXG5BdHRhY2hpbmcgcGFja2FnZTog46S847ixZ2dzdGFuY2XjpLzjuLJcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDjpLzjuLFwYWNrYWdlOmdncGxvdDLjpLzjuLI6XG5cbiAgICBnZW9tX2Vycm9yYmFyaCwgR2VvbUVycm9yYmFyaFxuXG5cbk5ldyB0byBnZ2Zvcm11bGE/ICBUcnkgdGhlIHR1dG9yaWFsczogXG5cdGxlYXJucjo6cnVuX3R1dG9yaWFsKFwiaW50cm9kdWN0aW9uXCIsIHBhY2thZ2UgPSBcImdnZm9ybXVsYVwiKVxuXHRsZWFybnI6OnJ1bl90dXRvcmlhbChcInJlZmluaW5nXCIsIHBhY2thZ2UgPSBcImdnZm9ybXVsYVwiKVxuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBtb3NhaWNEYXRhXG5Mb2FkaW5nIHJlcXVpcmVkIHBhY2thZ2U6IE1hdHJpeFxuXG5BdHRhY2hpbmcgcGFja2FnZTog46S847ixTWF0cml446S847iyXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0cyBhcmUgbWFza2VkIGZyb20g46S847ixcGFja2FnZTp0aWR5cuOkvOO4sjpcblxuICAgIGV4cGFuZCwgcGFjaywgdW5wYWNrXG5cblxuVGhlICdtb3NhaWMnIHBhY2thZ2UgbWFza3Mgc2V2ZXJhbCBmdW5jdGlvbnMgZnJvbSBjb3JlIHBhY2thZ2VzIGluIG9yZGVyIHRvIGFkZCBcbmFkZGl0aW9uYWwgZmVhdHVyZXMuICBUaGUgb3JpZ2luYWwgYmVoYXZpb3Igb2YgdGhlc2UgZnVuY3Rpb25zIHNob3VsZCBub3QgYmUgYWZmZWN0ZWQgYnkgdGhpcy5cblxuTm90ZTogSWYgeW91IHVzZSB0aGUgTWF0cml4IHBhY2thZ2UsIGJlIHN1cmUgdG8gbG9hZCBpdCBCRUZPUkUgbG9hZGluZyBtb3NhaWMuXG5cbkF0dGFjaGluZyBwYWNrYWdlOiDjpLzjuLFtb3NhaWPjpLzjuLJcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g46S847ixcGFja2FnZTpNYXRyaXjjpLzjuLI6XG5cbiAgICBtZWFuXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0cyBhcmUgbWFza2VkIGZyb20g46S847ixcGFja2FnZTpkcGx5cuOkvOO4sjpcblxuICAgIGNvdW50LCBkbywgdGFsbHlcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g46S847ixcGFja2FnZTpwdXJycuOkvOO4sjpcblxuICAgIGNyb3NzXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0IGlzIG1hc2tlZCBmcm9tIOOkvOO4sXBhY2thZ2U6Z2dwbG90MuOkvOO4sjpcblxuICAgIHN0YXRcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDjpLzjuLFwYWNrYWdlOnN0YXRz46S847iyOlxuXG4gICAgYmlub20udGVzdCwgY29yLCBjb3IudGVzdCwgY292LCBmaXZlbnVtLCBJUVIsIG1lZGlhbiwgcHJvcC50ZXN0LCBxdWFudGlsZSwgc2QsIHQudGVzdCwgdmFyXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0cyBhcmUgbWFza2VkIGZyb20g46S847ixcGFja2FnZTpiYXNl46S847iyOlxuXG4gICAgbWF4LCBtZWFuLCBtaW4sIHByb2QsIHJhbmdlLCBzYW1wbGUsIHN1bVxuIn0= -->
+<pre><code>Loading required package: lattice
+Loading required package: ggformula
+Loading required package: ggstance
+
+Attaching package: 㤼㸱ggstance㤼㸲
+
+The following objects are masked from 㤼㸱package:ggplot2㤼㸲:
+
+    geom_errorbarh, GeomErrorbarh
+
+
+New to ggformula?  Try the tutorials: 
+    learnr::run_tutorial(&quot;introduction&quot;, package = &quot;ggformula&quot;)
+    learnr::run_tutorial(&quot;refining&quot;, package = &quot;ggformula&quot;)
+Loading required package: mosaicData
+Loading required package: Matrix
+
+Attaching package: 㤼㸱Matrix㤼㸲
+
+The following objects are masked from 㤼㸱package:tidyr㤼㸲:
+
+    expand, pack, unpack
+
+
+The &#39;mosaic&#39; package masks several functions from core packages in order to add 
+additional features.  The original behavior of these functions should not be affected by this.
+
+Note: If you use the Matrix package, be sure to load it BEFORE loading mosaic.
+
+Attaching package: 㤼㸱mosaic㤼㸲
+
+The following object is masked from 㤼㸱package:Matrix㤼㸲:
+
+    mean
+
+The following objects are masked from 㤼㸱package:dplyr㤼㸲:
+
+    count, do, tally
+
+The following object is masked from 㤼㸱package:purrr㤼㸲:
+
+    cross
+
+The following object is masked from 㤼㸱package:ggplot2㤼㸲:
+
+    stat
+
+The following objects are masked from 㤼㸱package:stats㤼㸲:
+
+    binom.test, cor, cor.test, cov, fivenum, IQR, median, prop.test, quantile, sd, t.test, var
+
+The following objects are masked from 㤼㸱package:base㤼㸲:
+
+    max, mean, min, prod, range, sample, sum</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShtb25rZXlsZWFybilcbmxpYnJhcnkoa25pdHIpXG5saWJyYXJ5KGdsdWUpXG5gYGAifQ== -->
+<pre class="r"><code>library(monkeylearn)
 library(knitr)
-library(glue)
-library(ggplot2)
+library(glue)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog46S847ixZ2x1ZeOkvOO4slxuXG5UaGUgZm9sbG93aW5nIG9iamVjdCBpcyBtYXNrZWQgZnJvbSDjpLzjuLFwYWNrYWdlOmRwbHly46S847iyOlxuXG4gICAgY29sbGFwc2VcbiJ9 -->
+<pre><code>
+Attaching package: 㤼㸱glue㤼㸲
+
+The following object is masked from 㤼㸱package:dplyr㤼㸲:
+
+    collapse</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnZ3Bsb3QyKVxuXG5gYGAifQ== -->
+<pre class="r"><code>library(ggplot2)
 </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
